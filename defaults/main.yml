@@ -1,0 +1,3 @@
+---
+# defaults file for docker
+DOCKER_USERS: ["{{ ansible_env.USER }}"]

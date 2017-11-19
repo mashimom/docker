@@ -1,0 +1,6 @@
+---
+# tasks file for docker
+- include_tasks: xenial.yml
+  when: ansible_distribution_release == 'xenial' or ansible_distribution_release == 'loki'
+
+- include_tasks: compose.yml
