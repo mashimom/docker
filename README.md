@@ -8,11 +8,11 @@ A docker capable environment
 
 ## Role Variables
 
-Any missing value causes role failure.
+Defaults to the user connecting to target.
 
 | var | default value | required | description |
 |-----|---------------|----------|-------------|
-| `DOCKER_USERS` | `["{{ ansible_env.USER }}"]` | yes | List of all users that should be enable to run docker without sudo |
+| `DOCKER_USERS` | `["{{ansible_env.USER}}"]` | yes | List of all users that should be enable to run docker without sudo |
 
 ## Dependencies
 
