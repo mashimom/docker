@@ -1,38 +1,36 @@
-Role Name
-=========
+# Docker and docker-compose
 
-A brief description of the role goes here.
+Install docker from distro repo and then installs docker-compose from pip 
 
-Requirements
-------------
+## Requirements
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+A docker capable environment
 
-Role Variables
---------------
+## Role Variables
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+Any missing value causes role failure.
 
-Dependencies
-------------
+| var | default value | required | description |
+|-----|---------------|----------|-------------|
+| `DOCKER_USERS` | `["{{ ansible_env.USER }}"]` | yes | List of all users that should be enable to run docker without sudo |
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+## Dependencies
 
-Example Playbook
-----------------
+Depends on another role called `pip`.
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+## Example Playbook
 
-    - hosts: servers
+Example of how to use this role:
+
+    - hosts: localhost
       roles:
-         - { role: username.rolename, x: 42 }
+         - role: mashimom.docker
+           DOCKERUSERS: [kirk,picard]
 
-License
--------
+## License
 
-BSD
+MIT
 
-Author Information
-------------------
+## Author Information
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+@mashimom
